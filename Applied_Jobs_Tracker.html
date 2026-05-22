@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سجل التقديمات - أيمن الفيفي</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;line-height:1.7;color:#1a1a2e;background:#f0f4f8;-webkit-font-smoothing:antialiased}
+    .page{max-width:900px;margin:0 auto;padding:30px 20px 60px}
+    .header-area{background:linear-gradient(135deg,#0b1f33,#163d5e,#1a5080);color:#fff;padding:36px 40px 28px;border-radius:18px;margin-bottom:24px;box-shadow:0 16px 48px rgba(0,0,0,0.15);text-align:center}
+    .header-area h1{font-size:30px;font-weight:900;letter-spacing:3px;margin-bottom:4px}
+    .header-area .subtitle{font-size:14px;color:#8ec5e8;letter-spacing:1px;margin-bottom:20px}
+    .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+    .stat-box{background:rgba(255,255,255,0.08);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}
+    .stat-box .stat-number{font-size:28px;font-weight:900;color:#6cb4e8}
+    .stat-box .stat-label{font-size:10px;color:#b8d8ec;letter-spacing:1px;margin-top:2px}
+    .progress-section{background:#fff;border-radius:14px;padding:20px 28px;margin-bottom:24px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+    .progress-section h2{font-size:14px;font-weight:800;letter-spacing:1px;color:#0b1f33;padding-bottom:8px;margin-bottom:14px;border-bottom:2px solid #e8ecf1}
+    .progress-bar-bg{background:#e8ecf1;border-radius:12px;height:22px;overflow:hidden}
+    .progress-bar-fill{background:linear-gradient(90deg,#0b1f33,#3a8fd4,#6cb4e8);height:100%;border-radius:12px;width:0%;transition:width 2s ease}
+    .progress-text{text-align:center;font-size:12px;color:#666;margin-top:8px;font-weight:700}
+    .section{background:#fff;border-radius:14px;padding:20px 28px;margin-bottom:24px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+    .section h2{font-size:14px;font-weight:800;letter-spacing:1px;color:#0b1f33;padding-bottom:8px;margin-bottom:16px;border-bottom:2px solid #e8ecf1;display:flex;align-items:center;gap:8px}
+    .section h2 .en{font-size:11px;color:#999;font-weight:400;margin-right:auto;font-family:'Inter',sans-serif}
+    .section h2 .count{background:linear-gradient(135deg,#0b1f33,#1a5080);color:#fff;padding:2px 10px;border-radius:16px;font-size:11px;font-weight:700}
+    .card{border:1px solid #eef2f7;border-radius:12px;padding:14px 18px;margin-bottom:12px;border-right:3px solid #3a8fd4;background:#fff;transition:all 0.2s ease}
+    .card:hover{box-shadow:0 8px 24px rgba(58,143,212,0.1);transform:translateY(-1px)}
+    .card:last-child{margin-bottom:0}
+    .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .card-title-area{display:flex;align-items:center;gap:8px}
+    .card-num{background:linear-gradient(135deg,#0b1f33,#1a5080);color:#fff;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+    .card-title{font-weight:800;font-size:13px;color:#0b1f33}
+    .badge{display:inline-flex;align-items:center;gap:4px;background:#e8f5e9;color:#2e7d32;padding:3px 10px;border-radius:16px;font-size:9px;font-weight:800;white-space:nowrap}
+    .badge::before{content:"";width:5px;height:5px;background:#2e7d32;border-radius:50%}
+    .card-company{font-size:12px;color:#3a8fd4;font-weight:700;margin-bottom:4px}
+    .card-location{font-size:11px;color:#888;margin-bottom:6px}
+    .card-location .tag{display:inline-block;padding:2px 7px;border-radius:5px;font-size:9px;font-weight:800;margin-left:5px}
+    .tag.riyadh{background:#fff3e0;color:#e65100}
+    .tag.jeddah{background:#e3f2fd;color:#1565c0}
+    .tag.makkah{background:#fce4ec;color:#c62828}
+    .tag.remote{background:#e8f5e9;color:#2e7d32}
+    .card-desc{font-size:11px;color:#666;line-height:1.6;padding-top:6px;border-top:1px solid #f2f5f8}
+    .card-id{font-size:9px;color:#bbb;margin-top:4px;direction:ltr;text-align:left;font-family:'Inter',monospace}
+    .notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .note{background:#f8fafd;padding:12px 14px;border-radius:10px;border-right:3px solid #3a8fd4}
+    .note-label{font-size:9px;color:#999;font-weight:700;letter-spacing:1px;margin-bottom:2px}
+    .note-value{font-size:12px;color:#1a1a2e;font-weight:600}
+    .note a{color:#3a8fd4;text-decoration:underline}
+    .footer{text-align:center;padding:24px;color:rgba(0,0,0,0.3);font-size:11px}
+    .footer .name{font-weight:800;color:rgba(0,0,0,0.45);letter-spacing:2px;margin-bottom:2px;font-size:13px}
+    @media(max-width:640px){.header-area{padding:24px 18px}.stats-row{grid-template-columns:repeat(2,1fr);gap:8px}.stat-box .stat-number{font-size:22px}.section{padding:14px 12px}.notes-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="page">
+
+<div class="header-area">
+  <h1>AYMAN ALFAIFI</h1>
+  <div class="subtitle">سجل التقديمات الوظيفية — LinkedIn Easy Apply</div>
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-number">60</div><div class="stat-label">تم التقديم</div></div>
+    <div class="stat-box"><div class="stat-number">0</div><div class="stat-label">متبقي</div></div>
+    <div class="stat-box"><div class="stat-number">60</div><div class="stat-label">الهدف</div></div>
+    <div class="stat-box"><div class="stat-number">100%</div><div class="stat-label">مكتمل</div></div>
+  </div>
+</div>
+
+<div class="progress-section">
+  <h2>التقدم العام</h2>
+  <div class="progress-bar-bg"><div class="progress-bar-fill" id="bar"></div></div>
+  <div class="progress-text">60 من 60 تقديم — 23 مايو 2026 ✅</div>
+</div>
+
+<div class="section">
+<h2>📅 21 مايو 2026 — الجلسة الأولى <span class="en">Session 1</span> <span class="count">35</span></h2>
+
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">1</div><div class="card-title">Secretary</div></div><div class="badge">تم التقديم</div></div><div class="card-company">OHC</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4410027095</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">2</div><div class="card-title">Executive Office Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">ملاذ القانون</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4412898901</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">3</div><div class="card-title">Executive Secretary</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Opal Business</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4410169918</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">4</div><div class="card-title">Executive Secretary</div></div><div class="badge">تم التقديم</div></div><div class="card-company">InnovationTeam</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4417064491</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">5</div><div class="card-title">Executive Secretary</div></div><div class="badge">تم التقديم</div></div><div class="card-company">مجموعة القفاري</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4380797425</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">6</div><div class="card-title">Executive Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Qiddiya</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4409931888</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">7</div><div class="card-title">Executive Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Lucidya</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4399224726</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">8</div><div class="card-title">Operation Coordinator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Tas'Helat</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4374577607</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">9</div><div class="card-title">Administrator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Al Zan Building Materials</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4413618114</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">10</div><div class="card-title">Admin & Safety Specialist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">2P Perfect</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4410190306</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">11</div><div class="card-title">Receptionist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">MS PHARMA</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4413302514</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">12</div><div class="card-title">Receptionist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">MAISON CARE HS</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4410367686</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">13</div><div class="card-title">Receptionist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Radisson Hotel Group</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4366105842</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">14</div><div class="card-title">Project Coordinator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">webook.com</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4371433269</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">15</div><div class="card-title">Digital PMO</div></div><div class="badge">تم التقديم</div></div><div class="card-company">TAWANTECH</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4412565005</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">16</div><div class="card-title">Office Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">webook.com</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4383726320</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">17</div><div class="card-title">Project Manager — PMP</div></div><div class="badge">تم التقديم</div></div><div class="card-company">ATA7ADAK</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4413638314</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">18</div><div class="card-title">Program Management Asst Mgr</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Master Works</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4416664784</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">19</div><div class="card-title">Project Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Wisys</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4416680176</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">20</div><div class="card-title">HR & Admin Ops Specialist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Segadty</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4373864067</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">21</div><div class="card-title">Project Manager — CEO Office</div></div><div class="badge">تم التقديم</div></div><div class="card-company">webook.com</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4362475241</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">22</div><div class="card-title">PMO Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">JASARA</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4349394524</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">23</div><div class="card-title">Senior Executive Secretary</div></div><div class="badge">تم التقديم</div></div><div class="card-company">webook.com</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4370318954</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">24</div><div class="card-title">Secretary</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Pillarum Global</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4412822175</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">25</div><div class="card-title">Administrative Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">avua</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4415333988</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">26</div><div class="card-title">Admin & Executive Support</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Crossing Hurdles</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4413875908</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">27</div><div class="card-title">Styling Assistant & EA</div></div><div class="badge">تم التقديم</div></div><div class="card-company">DOSSA</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4413313722</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">28</div><div class="card-title">Back Office Employee</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Jet Media Solutions</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4417311945</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">29</div><div class="card-title">Enterprise Operations Specialist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Axonic Insurance</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4416322527</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">30</div><div class="card-title">Administrative Analyst</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Bee Stinger Brands</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4417336093</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">31</div><div class="card-title">Executive Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">HIREXE</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4417316769</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">32</div><div class="card-title">Ops Administrative Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Package Squad</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4417013942</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">33</div><div class="card-title">Operations Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Talent Global LLC</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4416104731</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">34</div><div class="card-title">Contract Administrator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">LHH</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4416119269</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">35</div><div class="card-title">Virtual Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Clerk-Tech</div><div class="card-location"><span class="tag remote">عن بُعد</span></div><div class="card-id">LinkedIn ID: 4413346608</div></div>
+</div>
+
+<div class="section">
+<h2>📅 22 مايو 2026 — الجلسة الثانية <span class="en">Session 2</span> <span class="count">12</span></h2>
+
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">36</div><div class="card-title">Admin Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Alghanim Industries</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4403979963</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">37</div><div class="card-title">Office Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Alghanim Industries</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4403985078</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">38</div><div class="card-title">Office Administrator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">PROVEN</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4402896613</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">39</div><div class="card-title">Office Administrator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">KAFD</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4402635446</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">40</div><div class="card-title">Office Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">ALJREEF</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4409630074</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">41</div><div class="card-title">Admin Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">AZmeel</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4405379995</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">42</div><div class="card-title">Admin & Safety Specialist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">PROVEN</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4402900415</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">43</div><div class="card-title">Office Administrator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">PROVEN</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4402896613</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">44</div><div class="card-title">Government & Public Relations Officer (PRO)</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Aqua-Tots Saudi Arabia</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4408866301</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">45</div><div class="card-title">Human Resources Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Navantia Arabia</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4412798563</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">46</div><div class="card-title">Reception</div></div><div class="badge">تم التقديم</div></div><div class="card-company">UFCGYMKSA</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4401640359</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">47</div><div class="card-title">People & Culture Officer</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Radisson Hotel Group</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4407181457</div></div>
+</div>
+
+<div class="section">
+<h2>📅 22 مايو 2026 — الجلسة الثالثة <span class="en">Session 3</span> <span class="count">4</span></h2>
+
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">48</div><div class="card-title">Office & Operations Coordinator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">REHAL AIR CARGO</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4412224586</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">49</div><div class="card-title">HR Operations Specialist</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Nova Water</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4411177141</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">50</div><div class="card-title">Local Content Expert</div></div><div class="badge">تم التقديم</div></div><div class="card-company">GFA - Global Financial Advisors</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4409283582</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">51</div><div class="card-title">Library Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Riyadh University of Arts</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4412092874</div></div>
+</div>
+
+<div class="section">
+<h2>📅 23 مايو 2026 — الجلسة الرابعة <span class="en">Session 4</span> <span class="count">9</span></h2>
+
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">52</div><div class="card-title">HR Admin Support (6 Month Contract)</div></div><div class="badge">تم التقديم</div></div><div class="card-company">TASC Outsourcing</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4415452105</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">53</div><div class="card-title">HR Coordinator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Radisson Hotel Group</div><div class="card-location"><span class="tag makkah">مكة</span></div><div class="card-id">LinkedIn ID: 4416628906</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">54</div><div class="card-title">HR Coordinator</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Rentokil Initial</div><div class="card-location"><span class="tag riyadh">السعودية</span></div><div class="card-id">LinkedIn ID: 4410023641</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">55</div><div class="card-title">Administrative Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Nassr Albarakati Law Firm</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4413680484</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">56</div><div class="card-title">HR & Government Relations Officer</div></div><div class="badge">تم التقديم</div></div><div class="card-company">SEK International Schools</div><div class="card-location"><span class="tag riyadh">السعودية</span></div><div class="card-id">LinkedIn ID: 4368360791</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">57</div><div class="card-title">Government Relations Officer</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Sumou Investment</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4413665932</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">58</div><div class="card-title">HR and Government Relations Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Knight Frank Middle East</div><div class="card-location"><span class="tag riyadh">الرياض</span></div><div class="card-id">LinkedIn ID: 4417129860</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">59</div><div class="card-title">Government Relations Manager</div></div><div class="badge">تم التقديم</div></div><div class="card-company">51Talk</div><div class="card-location"><span class="tag riyadh">السعودية</span></div><div class="card-id">LinkedIn ID: 4417497552</div></div>
+<div class="card"><div class="card-top"><div class="card-title-area"><div class="card-num">60</div><div class="card-title">Documentation Operations Assistant</div></div><div class="badge">تم التقديم</div></div><div class="card-company">Red Sea Gateway Terminal</div><div class="card-location"><span class="tag jeddah">جدة</span></div><div class="card-id">LinkedIn ID: 4415775081</div></div>
+</div>
+
+<div class="section">
+<h2>📝 ملاحظات</h2>
+<div class="notes-grid">
+  <div class="note"><div class="note-label">تاريخ البدء</div><div class="note-value">21 مايو 2026</div></div>
+  <div class="note"><div class="note-label">تاريخ الإنجاز</div><div class="note-value" style="color:#2e7d32">23 مايو 2026 ✅</div></div>
+  <div class="note" style="cursor:pointer" onclick="window.open('Ayman_Alfaifi_Resume.pdf','_blank')"><div class="note-label">السيرة الذاتية</div><div class="note-value"><a href="Ayman_Alfaifi_Resume.pdf">اضغط للعرض</a></div></div>
+  <div class="note"><div class="note-label">طريقة التقديم</div><div class="note-value">LinkedIn Easy Apply</div></div>
+  <div class="note"><div class="note-label">LinkedIn Premium</div><div class="note-value" style="color:#e65100">إلغاء قبل 20 يونيو 2026</div></div>
+  <div class="note"><div class="note-label">الإجمالي</div><div class="note-value" style="color:#2e7d32">60 / 60 (100%) ✅</div></div>
+</div>
+</div>
+
+<div class="footer">
+  <div class="name">AYMAN FARHAN YAHYA ALFAIFI</div>
+  <div>سجل التقديمات الوظيفية — 23 مايو 2026</div>
+</div>
+
+</div>
+<script>
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('bar').style.width='100%'},300)});
+</script>
+</body>
+</html>
