@@ -13,7 +13,8 @@ h1{color:#1a1a2e;font-size:22px;text-align:center;margin-bottom:5px}
 .stat .num{font-size:24px;font-weight:bold;color:#1a1a2e}
 .stat .label{font-size:11px;color:#888}
 .note{background:#fff8e1;padding:10px;border-radius:8px;margin:10px 0;font-size:12px;border-right:3px solid #ffc107}
-.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,0.08);border-right:4px solid #1a1a2e}
+.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,0.08);border-right:4px solid #1a1a2e;transition:all 0.3s}
+.card.done{border-right-color:#2e7d32;background:#f9fdf9;opacity:0.7}
 .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .card-num{background:#1a1a2e;color:#fff;width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0}
 .card-title{font-weight:bold;font-size:14px;color:#1a1a2e;margin-right:8px}
@@ -49,6 +50,7 @@ ul{font-size:13px;line-height:2}
 
 <div class="stats">
 <div class="stat"><div class="num">30</div><div class="label">شركة مستهدفة</div></div>
+<div class="stat"><div class="num" id="sentCount">0</div><div class="label">تم الإرسال</div></div>
 <div class="stat"><div class="num">2</div><div class="label">إيميل مؤكد</div></div>
 <div class="stat"><div class="num">28</div><div class="label">إيميل تقريبي</div></div>
 </div>
@@ -163,13 +165,16 @@ linkedin.com/in/ayman-alfaifi`;
 
 function render(){
 const container=document.getElementById('cards');
+const saved=JSON.parse(localStorage.getItem('sentEmails')||'{}');
 companies.forEach((co,i)=>{
 const isEn=co.en;
 const msg=isEn?makeEnMsg(co.n,co.j):makeArMsg(co.n,co.j);
 const badgeClass=co.v?'verified':'guessed';
 const badgeText=co.v?'مؤكد':'تقريبي';
+const isChecked=saved[i]?'checked':'';
+const doneClass=saved[i]?'done':'';
 const html=`
-<div class="card" id="card${i}">
+<div class="card ${doneClass}" id="card${i}">
 <div class="card-header">
 <div style="display:flex;align-items:center">
 <div class="card-num">${i+1}</div>
@@ -178,6 +183,7 @@ const html=`
 </div>
 <div class="card-right">
 ${isEn?'<span style="font-size:10px;color:#888;background:#eee;padding:2px 6px;border-radius:4px">English</span>':'<span style="font-size:10px;color:#888;background:#eee;padding:2px 6px;border-radius:4px">عربي</span>'}
+<input type="checkbox" id="chk${i}" onchange="toggleDone(${i})" ${isChecked} style="width:20px;height:20px;cursor:pointer;margin-right:4px" title="تم الإرسال">
 </div>
 </div>
 <div class="card-meta">
@@ -223,7 +229,29 @@ setTimeout(()=>btn.textContent='نسخ الرسالة',1500);
 });
 }
 
+function toggleDone(i){
+const card=document.getElementById('card'+i);
+const chk=document.getElementById('chk'+i);
+const saved=JSON.parse(localStorage.getItem('sentEmails')||'{}');
+if(chk.checked){
+saved[i]=true;
+card.classList.add('done');
+}else{
+delete saved[i];
+card.classList.remove('done');
+}
+localStorage.setItem('sentEmails',JSON.stringify(saved));
+updateCount();
+}
+
+function updateCount(){
+const saved=JSON.parse(localStorage.getItem('sentEmails')||'{}');
+const count=Object.keys(saved).length;
+document.getElementById('sentCount').textContent=count;
+}
+
 render();
+updateCount();
 </script>
 
 </body>
