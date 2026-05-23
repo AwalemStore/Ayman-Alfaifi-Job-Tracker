@@ -26,7 +26,7 @@
 
 ---
 
-## التقدم (60/60 مكتمل ✅)
+## التقدم (70/70 مكتمل ✅)
 
 ### وظائف الرياض — إدارية (13)
 1. Secretary — OHC (4410027095)
@@ -102,9 +102,21 @@
 59. Government Relations Manager — 51Talk (4417497552) — السعودية
 60. Documentation Operations Assistant — Red Sea Gateway Terminal (4415775081) — جدة
 
+### الجلسة الخامسة — الرياض + جدة + الدمام + ضبا (10)
+61. Receptionist — Confidential Government (4413699035) — جدة
+62. Office Document Controller — Abunayyan Holding (4410553689) — الرياض
+63. Document Controller — Dussmann-Ajlan & Bros (4406031928) — الرياض
+64. Document Controller — Abunayyan Holding (4408819221) — الرياض
+65. Document Controller — ECEC East Consulting (4416235517) — جدة
+66. Document Controller — Abunayyan Holding (4410518438) — الدمام
+67. Document Controller — Air Products (4416632052) — ضبا
+68. Document Controller — Cooperman & Goldberg (4402273239) — الرياض
+69. Administrative Assistant — Al-Enjaz Company (4407126367) — الرياض
+70. Executive Assistant — Confidential (4408183737) — الرياض
+
 ---
 
-## ✅ تم إكمال الهدف — 60/60 وظيفة
+## ✅ تم إكمال الهدف — 70/70 وظيفة
 
 ---
 
