@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYMAN FARHAN YAHYA ALFAIFI - Resume</title>
+  <meta name="description" content="Resume of Ayman Farhan Yahya Alfaifi - Administrative Professional - PMP Certified - Master of Public Administration">
+  <meta name="keywords" content="Administrative Professional, Executive Secretary, Office Management, PMP, Public Administration, Resume, CV">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 297mm;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: #2d2d2d;
+      background: #e8ecf1;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .resume {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    .header-area {
+      background: linear-gradient(135deg, #0b1f33 0%, #163d5e 50%, #1a5080 100%);
+      color: #ffffff;
+      padding: 20px 22mm 16px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .header-area::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3a8fd4, #6cb4e8, #3a8fd4);
+    }
+
+    .header-area h1 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .header-area .job-title-label {
+      font-size: 12px;
+      font-weight: 300;
+      color: #8ec5e8;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 18px;
+      font-size: 10.5px;
+      color: #b8d8ec;
+      line-height: 1.6;
+    }
+
+    .contact-row .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-row .contact-item .label {
+      color: #5ea0c8;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 8.5px;
+      letter-spacing: 0.8px;
+    }
+
+    /* ── BODY ── */
+    .body-area {
+      padding: 14px 22mm 18mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .section {
+      margin-bottom: 10px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0b1f33;
+      padding-bottom: 3px;
+      margin-bottom: 7px;
+      border-bottom: 1.5px solid #c8d8e8;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -1.5px;
+      left: 0;
+      width: 35px;
+      height: 1.5px;
+      background: #3a8fd4;
+    }
+
+    /* ── SUMMARY ── */
+    .summary-text {
+      text-align: justify;
+      line-height: 1.6;
+      color: #3a3a3a;
+      font-size: 11px;
+    }
+
+    /* ── EDUCATION ── */
+    .education-item {
+      margin-bottom: 5px;
+      padding-left: 10px;
+      border-left: 2.5px solid #3a8fd4;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 11.5px;
+      color: #0b1f33;
+    }
+
+    .item-date {
+      font-size: 10.5px;
+      color: #888;
+      font-weight: 500;
+      white-space: nowrap;
+      background: #f4f7fa;
+      padding: 1px 8px;
+      border-radius: 2px;
+    }
+
+    .item-subtitle {
+      font-size: 10.5px;
+      color: #666;
+      margin-top: 1px;
+    }
+
+    /* ── CERTS ── */
+    .cert-list {
+      list-style: none;
+      margin-left: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5px;
+    }
+
+    .cert-list li {
+      font-size: 10.5px;
+      color: #444;
+      padding: 4px 10px;
+      background: #f7f9fc;
+      border-left: 2.5px solid #3a8fd4;
+      border-radius: 0 3px 3px 0;
+      line-height: 1.45;
+    }
+
+    .cert-list li strong {
+      color: #0b1f33;
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience-item {
+      margin-bottom: 10px;
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 1px;
+    }
+
+    .exp-company {
+      font-size: 10.5px;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 3px;
+    }
+
+    .item-details {
+      list-style: none;
+      margin-left: 0;
+      margin-top: 2px;
+    }
+
+    .item-details li {
+      font-size: 10.5px;
+      color: #3a3a3a;
+      line-height: 1.55;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 1px;
+    }
+
+    .item-details li::before {
+      content: "\25B8";
+      position: absolute;
+      left: 0;
+      color: #3a8fd4;
+      font-size: 8px;
+      top: 3px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-subsection {
+      margin-bottom: 8px;
+    }
+
+    .skills-subsection:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-subsection h3 {
+      font-size: 10px;
+      font-weight: 700;
+      color: #0b1f33;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      background: #f4f7fa;
+      border: 1px solid #d8e4ef;
+      padding: 3px 10px;
+      font-size: 10px;
+      color: #0b1f33;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    /* ── LANGUAGES ── */
+    .languages-container {
+      display: flex;
+      gap: 24px;
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-name {
+      font-weight: 700;
+      font-size: 11px;
+      color: #0b1f33;
+    }
+
+    .lang-level {
+      font-size: 10px;
+      color: #555;
+      background: #f4f7fa;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+
+    .lang-bar-bg {
+      width: 70px;
+      height: 4px;
+      background: #e0e8f0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .lang-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3a8fd4, #0b1f33);
+      border-radius: 2px;
+    }
+
+    /* ── ATS KEYWORDS ── */
+    .ats-keywords {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      font-size: 1px;
+      color: transparent;
+      line-height: 0;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body {
+        background: #fff;
+      }
+      .resume {
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+      }
+      .header-area,
+      .header-area::after,
+      .cert-list li,
+      .skill-tag,
+      .lang-level,
+      .item-date,
+      .lang-bar-bg,
+      .lang-bar-fill,
+      .education-item,
+      .section h2::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .resume {
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
+      .header-area {
+        padding: 14px 14px 10px;
+      }
+      .header-area h1 {
+        font-size: 16px;
+      }
+      .body-area {
+        padding: 10px 14px;
+      }
+      .contact-row {
+        flex-direction: column;
+        gap: 1px;
+      }
+      .item-header,
+      .exp-header-row {
+        flex-direction: column;
+      }
+      .languages-container {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .cert-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ats-keywords">
+    Administrative Professional, Executive Secretary, Administrative Writer, Office Manager, Administrative Assistant,
+    PMP Certified, Project Management Professional, Public Administration, Master's Degree, Bachelor's Degree, Diploma,
+    Microsoft Office, SharePoint, ERP Systems, Google Workspace, Documentation, Reporting, Records Management,
+    Scheduling, Correspondence, Communication, Team Collaboration, King Abdulaziz University, Technical College,
+    SDAIA, Artificial Intelligence, AI, Healthcare Construction, Project Coordination, Office Coordination,
+    Cross-functional Teams, Stakeholder Management, Process Improvement, Bilingual, Arabic, English,
+    Riyadh, Saudi Arabia, KSA, Administrative Support, Time Management, Fast Learner
+  </div>
+
+  <div class="resume">
+    <header class="header-area">
+      <h1>AYMAN FARHAN YAHYA ALFAIFI</h1>
+      <div class="job-title-label">Administrative Professional &bull; PMP Certified</div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <span class="label">Phone</span>
+          <span>+966 56 534 5814</span>
+        </div>
+        <div class="contact-item">
+          <span class="label">Email</span>
+          <span>Ayman.f.alfaifi@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="label">Location</span>
+          <span>Riyadh, Saudi Arabia</span>
+        </div>
+        <div class="contact-item">
+          <span class="label">LinkedIn</span>
+          <span>linkedin.com/in/ayman-alfaifi</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="body-area">
+
+      <section class="section" aria-label="Professional Summary">
+        <h2>Professional Summary</h2>
+        <p class="summary-text">Results-driven administrative professional with a Master's degree in Public Administration and over 3 years of experience in executive support, administrative writing, and office management within corporate and healthcare construction environments. PMP-certified with proven expertise in project coordination, stakeholder communication, and process optimization. Certified by SDAIA in both the principles and advanced applications of Artificial Intelligence, demonstrating adaptability to emerging technologies. Actively seeking an administrative or junior management role in Riyadh to contribute to operational excellence and organizational growth.</p>
+      </section>
+
+      <section class="section" aria-label="Education">
+        <h2>Education</h2>
+        <div class="education-item">
+          <div class="item-header">
+            <span class="item-title">Master's Degree &ndash; Public Administration</span>
+            <span class="item-date">2025</span>
+          </div>
+          <div class="item-subtitle">King Abdulaziz University</div>
+        </div>
+        <div class="education-item">
+          <div class="item-header">
+            <span class="item-title">Bachelor's Degree &ndash; Public Administration</span>
+            <span class="item-date">2021</span>
+          </div>
+          <div class="item-subtitle">Technical College</div>
+        </div>
+        <div class="education-item">
+          <div class="item-header">
+            <span class="item-title">Diploma &ndash; Public Administration</span>
+            <span class="item-date">2019</span>
+          </div>
+          <div class="item-subtitle">Technical College</div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Licenses and Certifications">
+        <h2>Licenses &amp; Certifications</h2>
+        <ul class="cert-list">
+          <li><strong>Project Management Professional (PMP)</strong> &ndash; PM Tricks (2023)</li>
+          <li><strong>Principles of Artificial Intelligence</strong> &ndash; SDAIA &ndash; Saudi Data and AI Authority (2025)</li>
+          <li><strong>Advanced AI Concepts &amp; Applications</strong> &ndash; SDAIA &ndash; Saudi Data and AI Authority (2025)</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-label="Work Experience">
+        <h2>Work Experience</h2>
+        <div class="experience-item">
+          <div class="exp-header-row">
+            <span class="item-title">Executive Secretary</span>
+            <span class="item-date">Apr 2022 &ndash; Jul 2022</span>
+          </div>
+          <div class="exp-company">Al-Majd International Network for Production &amp; Distribution</div>
+          <ul class="item-details">
+            <li>Provided executive administrative support to C-level management, streamlining daily operations and improving scheduling efficiency</li>
+            <li>Managed 50+ incoming and outgoing correspondence monthly, ensuring timely responses and proper documentation</li>
+            <li>Coordinated cross-departmental meetings and maintained executive calendars, reducing scheduling conflicts by maintaining a centralized booking system</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <div class="exp-header-row">
+            <span class="item-title">Administrative Writer</span>
+            <span class="item-date">Mar 2018 &ndash; Nov 2020</span>
+          </div>
+          <div class="exp-company">International Hospitals Construction Company</div>
+          <ul class="item-details">
+            <li>Prepared 100+ official documents, contracts, and periodic reports in both Arabic and English to support project operations</li>
+            <li>Managed and organized digital and physical filing systems for 500+ records, improving document retrieval time</li>
+            <li>Coordinated scheduling and internal communication across 5+ departments, ensuring alignment between project teams</li>
+            <li>Supported cross-functional teams of 10+ members in administrative workflows, contributing to on-time project milestones</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Core Skills">
+        <h2>Core Skills</h2>
+        <div class="skills-subsection">
+          <h3>Technical Skills</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Administrative Support</span>
+            <span class="skill-tag">Office Management</span>
+            <span class="skill-tag">Documentation &amp; Reporting</span>
+            <span class="skill-tag">Microsoft Office Suite</span>
+            <span class="skill-tag">Google Workspace</span>
+            <span class="skill-tag">SharePoint</span>
+            <span class="skill-tag">Records Management</span>
+            <span class="skill-tag">Project Coordination (PMP)</span>
+            <span class="skill-tag">ERP Systems</span>
+            <span class="skill-tag">AI Fundamentals</span>
+          </div>
+        </div>
+        <div class="skills-subsection">
+          <h3>Soft Skills</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Communication Skills</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Fast Learner</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Attention to Detail</span>
+            <span class="skill-tag">Adaptability</span>
+            <span class="skill-tag">Work Under Pressure</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Languages">
+        <h2>Languages</h2>
+        <div class="languages-container">
+          <div class="lang-item">
+            <span class="lang-name">Arabic</span>
+            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 100%"></div></div>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">English</span>
+            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 55%"></div></div>
+            <span class="lang-level">Intermediate</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

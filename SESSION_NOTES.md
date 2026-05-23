@@ -4,7 +4,7 @@
 ---
 
 ## الهدف
-مساعدة أيمن فهد يحيى الفيفي في التقديم على 60 وظيفة عبر LinkedIn Easy Apply (وظائف إدارية، سكرتارية، HR، وعلاقات حكومية) — الرياض + جدة + مكة + أبها (بدون عن بُعد)
+مساعدة أيمن فهد يحيى الفيفي في التقديم على 100 وظيفة عبر LinkedIn Easy Apply (وظائف إدارية، سكرتارية، HR، وعلاقات حكومية) — الرياض + جدة + مكة + أبها + مدن أخرى (حضوري + هجين + عن بُعد)
 
 ## بيانات أيمن
 - الاسم الكامل: Ayman Farhan Yahya Alfaifi
@@ -26,9 +26,23 @@
 
 ---
 
-## التقدم (70/70 مكتمل ✅)
+## التقدم (82/100)
 
-### وظائف الرياض — إدارية (13)
+### الجلسة السادسة — 23 مايو 2026 — الرياض + الدمام + جدة + عن بُعد (12)
+71. Office Manager — KAFAAT Recruitment — الدمام (4416135764) ✅
+72. Administrative Assistant — الماجد للعود — الرياض (4417048475) ✅
+73. Admin Assistant (Educational Institute) — APEX Resources — الدمام (4413362002) ✅
+74. مساعد إداري — جامعة سليمان الراجحي — (4416569450) ✅
+75. Document Controller — FOL Management — (4387426019) ✅
+76. Sr. Document Controller — HanmiGlobal MENA — (4384586848) ✅
+77. Lead Document Controller (Aconex) — HanmiGlobal MENA — (4384121690) ✅
+78. sport admin — Saudi Arabian Rugby Federation — (4411558201) ✅
+79. Administrative Assistant — Confidential Jobs — (4412898797) ✅
+80. Office Manager/ Executive Assistant — Swisslinx Middle East — جدة (4413304240) ✅
+81. Store Manager Assistant — Lichi — جدة (4413684001) ✅
+82. Admin - Facility in Charge — TCS — (4415796853) ✅
+
+### الجلسة الخامسة — الرياض + جدة + الدمام + ضبا (10)
 1. Secretary — OHC (4410027095)
 2. Executive Office Manager — ملاذ القانون (4412898901)
 3. Executive Secretary — Opal Business (4410169918)
@@ -116,7 +130,7 @@
 
 ---
 
-## ✅ تم إكمال الهدف — 70/70 وظيفة
+## ✅ التقدم الحالي — 82/100 وظيفة (متبقي 18)
 
 ---
 
