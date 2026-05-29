@@ -26,7 +26,7 @@
 
 ---
 
-## التقدم (93/100)
+## التقدم (126/150)
 
 ### الجلسة السابعة — 23 مايو 2026 — LinkedIn Easy Apply + إيميلات مباشرة (11)
 83. HR Specialist — SETCCO — (4414824273) ✅
@@ -155,7 +155,31 @@
 
 ---
 
-## ✅ التقدم الحالي — 93/100 وظيفة (متبقي 7)
+### الجلسة التاسعة — 29 مايو 2026 — GRO + Admin (2)
+125. GRO - Government Relation Officer — Abdullah A. Al-Barrak & Son Co. — (4407429258) — الجبيل ✅
+126. Administrator — UCC Holding — (4413408660) — الرياض ✅
+
+### الجلسة الثامنة — 29 مايو 2026 — LinkedIn Easy Apply (31)
+94–109. تم التقديم على 16 وظيفة Easy Apply في جلسة سابقة (تفاصيل محدثة في الملخص)
+110. Executive Assistant — Confidential — (4410034297) — الرياض ✅
+111. Executive Assistant — Next Match AI — (4417629312) — عن بُعد ✅
+112. Executive Assistant — Confidential — (4407733640) — الرياض ✅
+113. Operations & Data Secretary — Jalib Advanced — (4407715204) — الجبيل ✅
+114. Personal Assistant — Land Sterling — (4417860245) — الرياض ✅
+115. Senior Document Controller — Jasara — (4418684431) — الرياض ✅
+116. Government Relationship Officer — Adecco — (4418940694) — الرياض ✅
+117. HR Assistant - Tamheer — Transmed — (4413676276) — الرياض ✅
+118. Fleet & Facility Specialist — Bayer — (4413483414) — جدة ✅
+119. Administration — Tata Consultancy Services — (4413561805) — الدمام ✅
+120. Administrative Manager — IMbright — (4414870626) — الرياض ✅
+121. Office Manager/Executive Assistant — Swisslinx Middle East — (4413304240) — جدة ✅
+122. Administrative Officer — Match | ماتش — (4412898597) — جدة ✅
+123. وظيفة استقبال — Dr. Saed ALHarthi Medical Group — (4417690152) — الرياض ✅
+124. HR & Admin Manager — Confidential — (4414860295) — الرياض ✅
+
+---
+
+## ✅ التقدم الحالي — 126/150 وظيفة (متبقي 24)
 
 ---
 
